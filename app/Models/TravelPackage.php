@@ -23,4 +23,9 @@ class TravelPackage extends Model
         'type',
         'price',
     ];
+
+    public function galleries()
+    {
+        return $this->hasMany(Galleri::class, 'travel_packages_id', 'id');
+    }
 }
