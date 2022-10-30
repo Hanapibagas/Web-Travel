@@ -15,11 +15,11 @@ class CreateTransactionDetailsTable extends Migration
     {
         Schema::create('transaction_details', function (Blueprint $table) {
             $table->id();
-            $table->integer('transaction_id');
+            $table->integer('transactions_id');
             $table->string('username');
             $table->string('nationality');
             $table->boolean('is_visa');
-            $table->date('deo_passport');
+            $table->date('doe_passport');
             $table->softDeletes();
             $table->timestamps();
         });

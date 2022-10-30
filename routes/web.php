@@ -23,9 +23,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('detail/{slug}', [DetailController::class, 'detail'])->name('detail');
+
 Route::post('checkout/{id}', [CheckoutController::class, 'process'])->middleware(['auth', 'verified'])->name('checkout-process');
 Route::get('checkout/{id}', [CheckoutController::class, 'index'])->middleware(['auth', 'verified'])->name('checkout');
-Route::post('checkout/{id}', [CheckoutController::class, 'process'])->middleware(['auth', 'verified'])->name('checkout_process');
 Route::post('checkout/create/{detail_id}', [CheckoutController::class, 'create'])->middleware(['auth', 'verified'])->name('checkout-create');
 Route::get('checkout/remove/{detail_id}', [CheckoutController::class, 'remove'])->middleware(['auth', 'verified'])->name('checkout-remove');
 Route::get('checkout/confirm/{id}', [CheckoutController::class, 'success'])->middleware(['auth', 'verified'])->name('checkout-success');
