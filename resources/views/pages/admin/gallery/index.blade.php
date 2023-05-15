@@ -30,18 +30,19 @@
                             <th>{{ $item->id }}</th>
                             <th>{{ $item->travel_package->title }}</th>
                             <th>
-                                <img src="{{ Storage::url($item->image) }}" alt="" style="width: 150px" class="img-thumbnail">
+                                <img src="{{ Storage::url($item->image) }}" alt="" style="width: 150px"
+                                    class="img-thumbnail">
                             </th>
                             <th>
                                 <a href="{{ route('gallery.edit', $item->id) }}" class="btn btn-info">
                                     <i class="fa fa-pencil-alt"></i>
                                 </a>
                                 <form action="{{ route('gallery.destroy', $item->id) }}" method="POST" class="d-inline">
-                                @csrf
-                                @method('DELETE')
-                                <button class="btn btn-danger">
-                                    <i class="fa fa-trash"></i>
-                                </button>
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
                                 </form>
                             </th>
                         </tr>
